@@ -2,7 +2,7 @@ extends Node2D
 
 @export var speed = 100
 @export var radius = 8
-@export var speed_increment = .5
+@export var speed_increment = 1.5
 @export var radius_increment = 1
 @export var random_deflect = 0.5
 @export var velocity = Vector2(5, 2)
