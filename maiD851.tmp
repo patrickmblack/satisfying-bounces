@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4vgrfvto1k6o"]
+
+[ext_resource type="PackedScene" uid="uid://cgqbbo1ebs15c" path="res://ball_by_code.tscn" id="1_f0vcq"]
+
+[node name="main" type="Node2D"]
+
+[node name="ball_by_code" parent="." instance=ExtResource("1_f0vcq")]
+position = Vector2(387, 237)
+speed = 200

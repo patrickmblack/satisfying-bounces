@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgqbbo1ebs15c"]
+
+[ext_resource type="Script" path="res://ball_by_code.gd" id="1_us07e"]
+[ext_resource type="AudioStream" uid="uid://c31ssewjjf3i3" path="res://audio/piano_keys/A0.mp3" id="2_f7jq2"]
+[ext_resource type="Script" path="res://trail.gd" id="3_yhh81"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r8ym4"]
+streams_count = 1
+random_pitch = 6.29
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("2_f7jq2")
+stream_0/weight = 1.0
+
+[sub_resource type="Gradient" id="Gradient_l0jrv"]
+offsets = PackedFloat32Array(0, 0.549669)
+colors = PackedColorArray(0, 0, 0, 1, 0.615686, 1, 1, 1)
+
+[node name="ball_by_code" type="Node2D"]
+script = ExtResource("1_us07e")
+
+[node name="note" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_r8ym4")
+max_polyphony = 999
+
+[node name="Line2D" type="Line2D" parent="."]
+top_level = true
+width = 2.0
+default_color = Color(0, 0.894118, 0.898039, 1)
+gradient = SubResource("Gradient_l0jrv")
+script = ExtResource("3_yhh81")
