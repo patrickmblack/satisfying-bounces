@@ -5,9 +5,5 @@
 [node name="main" type="Node2D"]
 
 [node name="ball_by_code" parent="." instance=ExtResource("1_f0vcq")]
-position = Vector2(50, 50)
-velocity = Vector2(3, 2)
-
-[node name="ball_by_code2" parent="." instance=ExtResource("1_f0vcq")]
-position = Vector2(50, 950)
+position = Vector2(256, 360)
 velocity = Vector2(3, -2)
