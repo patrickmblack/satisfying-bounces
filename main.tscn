@@ -7,3 +7,10 @@
 [node name="ball_by_code" parent="." instance=ExtResource("1_f0vcq")]
 position = Vector2(256, 360)
 velocity = Vector2(3, -2)
+
+[node name="ball_by_code2" parent="." instance=ExtResource("1_f0vcq")]
+position = Vector2(700, 360)
+speed = 90
+radius = 16
+speed_increment = 15.0
+velocity = Vector2(-3, 2)
