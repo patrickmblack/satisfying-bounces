@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3ol81stsk6l6"]
+
+[ext_resource type="Script" path="res://ball_physics.gd" id="1_0ml3s"]
+[ext_resource type="Texture2D" uid="uid://cskw8grb4r1dc" path="res://sprites/CIRCLE.png" id="2_8sakj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blnik"]
+radius = 33.0151
+
+[node name="ball_physics" type="CharacterBody2D"]
+script = ExtResource("1_0ml3s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8sakj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_blnik")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
