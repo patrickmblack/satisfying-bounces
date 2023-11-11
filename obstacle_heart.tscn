@@ -5,5 +5,6 @@ collision_layer = 2
 freeze = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(202, 121)
 build_mode = 1
-polygon = PackedVector2Array(376, 134, 239, 198, 468, 386, 717, 143, 602, 128, 473, 272)
+polygon = PackedVector2Array(371, 185, 311, 260, 468, 386, 615, 268, 559, 213, 473, 272)
