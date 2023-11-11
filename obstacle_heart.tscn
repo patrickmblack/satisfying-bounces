@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bn5auk3wou6xf"]
+
+[node name="obstacle_heart" type="RigidBody2D"]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(376, 134, 239, 198, 468, 386, 717, 143, 602, 128, 473, 272)

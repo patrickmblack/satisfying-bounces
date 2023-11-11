@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4vgrfvto1k6o"]
+[gd_scene load_steps=4 format=3 uid="uid://b4vgrfvto1k6o"]
 
-[ext_resource type="PackedScene" uid="uid://cgqbbo1ebs15c" path="res://ball_by_code.tscn" id="1_f0vcq"]
+[ext_resource type="PackedScene" uid="uid://d3ol81stsk6l6" path="res://ball_physics.tscn" id="1_ar3m7"]
+[ext_resource type="PackedScene" uid="uid://1r01k6rjbtra" path="res://wall.tscn" id="2_oxes5"]
+[ext_resource type="PackedScene" uid="uid://bn5auk3wou6xf" path="res://obstacle_heart.tscn" id="3_wbepf"]
 
 [node name="main" type="Node2D"]
 
-[node name="ball_by_code" parent="." instance=ExtResource("1_f0vcq")]
-position = Vector2(0, 100)
-velocity = Vector2(10, 2)
+[node name="ball_physics" parent="." instance=ExtResource("1_ar3m7")]
+position = Vector2(50, 50)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TopWall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(0, -14)
+
+[node name="BottomWall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(1, 730)
+
+[node name="Left Wall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(-10, -192)
+rotation = 1.5708
+
+[node name="RightWall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(1294, -190)
+rotation = 1.5708
+
+[node name="obstacle_heart" parent="Node" instance=ExtResource("3_wbepf")]
