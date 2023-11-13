@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmb327fj1k8sa"]
+
+[ext_resource type="Script" path="res://trail_fade.gd" id="1_ouxhr"]
+
+[node name="trail_fade" type="Line2D"]
+script = ExtResource("1_ouxhr")
+MAX_LENGTH = 50

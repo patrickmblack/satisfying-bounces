@@ -32,6 +32,10 @@ movie_writer/fps=30
 2d_physics/layer_1="ball"
 2d_physics/layer_2="wall"
 
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

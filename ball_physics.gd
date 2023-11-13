@@ -17,9 +17,9 @@ var start_pos: Vector2
 func _ready():
 	randomize()
 	velocity = vel
-	var random_color = Color(randf(), randf(), randf(), 1)
+	var _random_color = Color(randf(), randf(), randf(), 1)
 	#line_2d.gradient = Gradient(Color.BLACK, random_color)
-	line_2d.default_color = random_color
+	#line_2d.default_color = _random_color
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * speed * delta)
