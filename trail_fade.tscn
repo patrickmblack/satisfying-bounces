@@ -3,5 +3,8 @@
 [ext_resource type="Script" path="res://trail_fade.gd" id="1_ouxhr"]
 
 [node name="trail_fade" type="Line2D"]
+show_behind_parent = true
+top_level = true
+z_index = -1
 script = ExtResource("1_ouxhr")
 MAX_LENGTH = 50

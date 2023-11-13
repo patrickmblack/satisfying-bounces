@@ -1,22 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgqbbo1ebs15c"]
+[gd_scene load_steps=4 format=3 uid="uid://cgqbbo1ebs15c"]
 
 [ext_resource type="Script" path="res://ball_by_code.gd" id="1_us07e"]
 [ext_resource type="PackedScene" uid="uid://bmb327fj1k8sa" path="res://trail_fade.tscn" id="2_n3lnu"]
 
-[sub_resource type="Curve" id="Curve_mk5ql"]
+[sub_resource type="Curve" id="Curve_d03b0"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_g6gua"]
-colors = PackedColorArray(0, 1, 0.233333, 1, 0, 0, 0, 0)
 
 [node name="ball_by_code" type="Node2D"]
 script = ExtResource("1_us07e")
 
 [node name="trail_fade" parent="." instance=ExtResource("2_n3lnu")]
-show_behind_parent = true
-top_level = true
 width = 6.0
-width_curve = SubResource("Curve_mk5ql")
-gradient = SubResource("Gradient_g6gua")
+width_curve = SubResource("Curve_d03b0")
 MAX_LENGTH = 500
