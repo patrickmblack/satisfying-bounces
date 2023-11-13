@@ -1,24 +1,52 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4vgrfvto1k6o"]
 
-[ext_resource type="Script" path="res://spawn_points.gd" id="1_ti0xs"]
+[ext_resource type="PackedScene" uid="uid://d3ol81stsk6l6" path="res://ball_physics.tscn" id="1_b1gye"]
 [ext_resource type="PackedScene" uid="uid://1r01k6rjbtra" path="res://wall.tscn" id="2_oxes5"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_ti0xs")
-pos = Vector2(100, 200)
 
-[node name="Node" type="Node" parent="."]
+[node name="Walls" type="Node" parent="."]
 
-[node name="TopWall" parent="Node" instance=ExtResource("2_oxes5")]
+[node name="TopWall" parent="Walls" instance=ExtResource("2_oxes5")]
 position = Vector2(0, -14)
 
-[node name="BottomWall" parent="Node" instance=ExtResource("2_oxes5")]
+[node name="BottomWall" parent="Walls" instance=ExtResource("2_oxes5")]
 position = Vector2(1, 730)
 
-[node name="Left Wall" parent="Node" instance=ExtResource("2_oxes5")]
+[node name="Left Wall" parent="Walls" instance=ExtResource("2_oxes5")]
 position = Vector2(-10, -192)
 rotation = 1.5708
 
-[node name="RightWall" parent="Node" instance=ExtResource("2_oxes5")]
+[node name="RightWall" parent="Walls" instance=ExtResource("2_oxes5")]
 position = Vector2(1294, -190)
 rotation = 1.5708
+
+[node name="ball_physics" parent="." instance=ExtResource("1_b1gye")]
+position = Vector2(213, 360)
+speed = 200
+speed_inc = 0
+vel = Vector2(0, 2)
+
+[node name="ball_physics2" parent="." instance=ExtResource("1_b1gye")]
+position = Vector2(426, 360)
+speed = 225
+speed_inc = 0
+vel = Vector2(0, 2)
+
+[node name="ball_physics3" parent="." instance=ExtResource("1_b1gye")]
+position = Vector2(639, 360)
+speed = 250
+speed_inc = 0
+vel = Vector2(0, 2)
+
+[node name="ball_physics4" parent="." instance=ExtResource("1_b1gye")]
+position = Vector2(852, 360)
+speed = 275
+speed_inc = 0
+vel = Vector2(0, 2)
+
+[node name="ball_physics5" parent="." instance=ExtResource("1_b1gye")]
+position = Vector2(1065, 360)
+speed = 300
+speed_inc = 0
+vel = Vector2(0, 2)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4vgrfvto1k6o"]
+
+[ext_resource type="Script" path="res://spawn_points.gd" id="1_ti0xs"]
+[ext_resource type="PackedScene" uid="uid://1r01k6rjbtra" path="res://wall.tscn" id="2_oxes5"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_ti0xs")
+number_of_markers = 5
+start_pos = Vector2(69, 150)
+pos_increment = null
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TopWall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(0, -14)
+
+[node name="BottomWall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(1, 730)
+
+[node name="Left Wall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(-10, -192)
+rotation = 1.5708
+
+[node name="RightWall" parent="Node" instance=ExtResource("2_oxes5")]
+position = Vector2(1294, -190)
+rotation = 1.5708
