@@ -7,4 +7,4 @@ show_behind_parent = true
 top_level = true
 z_index = -1
 script = ExtResource("1_ouxhr")
-MAX_LENGTH = 50
+MAX_LENGTH = 5

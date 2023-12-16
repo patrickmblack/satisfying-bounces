@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgqbbo1ebs15c"]
+[gd_scene load_steps=6 format=3 uid="uid://cgqbbo1ebs15c"]
 
 [ext_resource type="Script" path="res://ball_by_code.gd" id="1_us07e"]
 [ext_resource type="PackedScene" uid="uid://bmb327fj1k8sa" path="res://trail_fade.tscn" id="2_n3lnu"]
@@ -8,10 +8,7 @@
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_oyjp7"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q6d7a"]
-playback_mode = 1
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_66i7c"]
 random_pitch = 1.5
 streams_count = 1
 stream_0/stream = ExtResource("3_x1gtu")
@@ -21,19 +18,13 @@ stream_0/weight = 1.0
 position = Vector2(100, 100)
 script = ExtResource("1_us07e")
 radius = 20
-speed_increment = 2.0
+speed_increment = 0.0
 trail_color = Color(0.607843, 0, 0.721569, 1)
 
 [node name="trail_fade" parent="." instance=ExtResource("2_n3lnu")]
 width = 18.0
 width_curve = SubResource("Curve_goreo")
-default_color = Color(0.545098, 0.541176, 0, 1)
-gradient = SubResource("Gradient_oyjp7")
-joint_mode = 1
-sharp_limit = 5.0
-round_precision = 9
-antialiased = true
 MAX_LENGTH = 150
 
 [node name="note" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_q6d7a")
+stream = SubResource("AudioStreamRandomizer_66i7c")

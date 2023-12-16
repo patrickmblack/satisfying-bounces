@@ -1,119 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4vgrfvto1k6o"]
+[gd_scene load_steps=3 format=3 uid="uid://b4vgrfvto1k6o"]
 
-[ext_resource type="PackedScene" uid="uid://cgqbbo1ebs15c" path="res://ball_by_code.tscn" id="2_h5gn1"]
-[ext_resource type="PackedScene" uid="uid://1r01k6rjbtra" path="res://wall.tscn" id="2_oxes5"]
-[ext_resource type="AudioStream" uid="uid://drupgsk62lu7" path="res://audio/minecraft/pop.wav" id="3_mior8"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_33yo8"]
-streams_count = 1
-random_volume_offset_db = 0.0
-stream_0/stream = ExtResource("3_mior8")
-stream_0/weight = 1.0
+[ext_resource type="Script" path="res://spawn_points.gd" id="1_efcs4"]
+[ext_resource type="PackedScene" uid="uid://cgqbbo1ebs15c" path="res://ball_by_code.tscn" id="2_nq4vo"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_efcs4")
+ball_scene = ExtResource("2_nq4vo")
 
-[node name="Walls" type="Node" parent="."]
+[node name="ball_by_code" parent="." instance=ExtResource("2_nq4vo")]
+position = Vector2(960, 540)
+radius = 35
+trail_color = Color(0, 0.87451, 0.458824, 1)
 
-[node name="TopWall" parent="Walls" instance=ExtResource("2_oxes5")]
-position = Vector2(0, -14)
-
-[node name="BottomWall" parent="Walls" instance=ExtResource("2_oxes5")]
-position = Vector2(1, 730)
-
-[node name="Left Wall" parent="Walls" instance=ExtResource("2_oxes5")]
-position = Vector2(-10, -192)
-rotation = 1.5708
-
-[node name="RightWall" parent="Walls" instance=ExtResource("2_oxes5")]
-position = Vector2(1294, -190)
-rotation = 1.5708
-
-[node name="ball_by_code" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(160, 10)
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(0.909804, 0.0784314, 0.0862745, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
-
-[node name="ball_by_code2" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(320, 10)
-speed = 125
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(1, 0.647059, 0, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code2"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
-
-[node name="ball_by_code3" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(480, 10)
-speed = 150
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(0.980392, 0.921569, 0.211765, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code3"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
-
-[node name="ball_by_code4" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(640, 10)
-speed = 175
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(0.47451, 0.764706, 0.0784314, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code4"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
-
-[node name="ball_by_code5" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(800, 10)
-speed = 200
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(0.282353, 0.490196, 0.905882, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code5"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
-
-[node name="ball_by_code6" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(960, 10)
-speed = 225
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(0.294118, 0.211765, 0.615686, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code6"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
-
-[node name="ball_by_code7" parent="." instance=ExtResource("2_h5gn1")]
-z_index = 3
-y_sort_enabled = true
-position = Vector2(1120, 10)
-speed = 250
-speed_increment = 0.0
-velocity = Vector2(0, 2)
-trail_color = Color(0.439216, 0.211765, 0.615686, 1)
-
-[node name="note" type="AudioStreamPlayer2D" parent="ball_by_code7"]
-stream = SubResource("AudioStreamRandomizer_33yo8")
-max_polyphony = 50
+[connection signal="wall_bounce" from="ball_by_code" to="." method="on_wall_bounce"]

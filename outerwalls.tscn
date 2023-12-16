@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhgmaowkjnk7d"]
+
+[ext_resource type="PackedScene" uid="uid://1r01k6rjbtra" path="res://wall.tscn" id="1_pn8cv"]
+
+[node name="Walls" type="Node"]
+
+[node name="TopWall" parent="." instance=ExtResource("1_pn8cv")]
+visible = false
+position = Vector2(0, -14)
+
+[node name="BottomWall" parent="." instance=ExtResource("1_pn8cv")]
+visible = false
+position = Vector2(1, 730)
+
+[node name="Left Wall" parent="." instance=ExtResource("1_pn8cv")]
+visible = false
+position = Vector2(-10, -192)
+rotation = 1.5708
+
+[node name="RightWall" parent="." instance=ExtResource("1_pn8cv")]
+visible = false
+position = Vector2(1294, -190)
+rotation = 1.5708
